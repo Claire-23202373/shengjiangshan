@@ -1,0 +1,549 @@
+/* ============================================
+   基礎設定與變數
+   ============================================ */
+:root {
+  --color-cream: #F3EDE3;      /* 暖米白 */
+  --color-charcoal: #1B1917;   /* 深炭黑 */
+  --color-gold: #B98A4A;       /* 銅金色 */
+  --color-rock-gray: #6E6A64;  /* 山岩灰 */
+  --color-text-dark: #2B2823;
+  --header-height: 80px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Noto Serif TC", "PMingLiU", "STSong", serif;
+  color: var(--color-text-dark);
+  background-color: var(--color-cream);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.section-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 100px 24px;
+}
+
+.section-sub {
+  color: var(--color-rock-gray);
+  margin-top: 16px;
+  font-size: 1.05rem;
+}
+
+.section-end {
+  margin-top: 48px;
+  font-size: 1.1rem;
+  color: var(--color-gold);
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--color-charcoal);
+}
+
+/* ============================================
+   按鈕（ButtonBlock）
+   ============================================ */
+.btn {
+  display: inline-block;
+  padding: 14px 36px;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  border: 1.5px solid var(--color-gold);
+}
+
+.btn-primary {
+  background-color: var(--color-gold);
+  color: #FFFFFF;
+}
+
+.btn-primary:hover {
+  background-color: #A5783D;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-gold);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(185, 138, 74, 0.1);
+}
+
+/* ============================================
+   HeaderBlock
+   ============================================ */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  background-color: var(--color-cream);
+  z-index: 1000;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+}
+
+.logo-img {
+  height: 44px;
+  width: auto;
+}
+
+.main-nav {
+  display: flex;
+  gap: 32px;
+}
+
+.main-nav a {
+  font-size: 0.95rem;
+  color: var(--color-text-dark);
+  font-weight: 500;
+}
+
+.main-nav a:hover {
+  color: var(--color-gold);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-charcoal);
+}
+
+/* ============================================
+   HeroBlock
+   ============================================ */
+.hero-block {
+  position: relative;
+  min-height: calc(100vh - var(--header-height));
+  margin-top: var(--header-height);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('/hero-mountain.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.hero-text {
+  max-width: 520px;
+}
+
+.hero-text h1 {
+  color: #FFFFFF;
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+}
+
+.hero-sub {
+  color: #E4DFD6;
+  font-size: 1.05rem;
+  margin-bottom: 32px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.hero-buttons .btn-secondary {
+  color: var(--color-cream);
+  border-color: var(--color-cream);
+}
+
+.hero-buttons .btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.hero-process {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-self: flex-end;
+}
+
+.process-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: rgba(27, 25, 23, 0.35);
+  padding: 12px 20px;
+  border: 1px solid rgba(185, 138, 74, 0.5);
+  border-radius: 4px;
+}
+
+.step-num {
+  color: var(--color-gold);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.step-title {
+  color: #F3EDE3;
+  font-size: 0.9rem;
+}
+
+/* ============================================
+   PainPointBlock
+   ============================================ */
+.pain-point-block {
+  background-color: var(--color-cream);
+}
+
+.pain-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin-top: 56px;
+}
+
+.pain-item {
+  border-top: 2px solid var(--color-gold);
+  padding-top: 20px;
+}
+
+.pain-num {
+  color: var(--color-gold);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.pain-item h3 {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  font-size: 1.15rem;
+  color: var(--color-charcoal);
+}
+
+.pain-item p {
+  color: var(--color-rock-gray);
+  font-size: 0.95rem;
+}
+
+/* ============================================
+   SolutionBlock
+   ============================================ */
+.solution-block {
+  background-color: #EAE2D3;
+}
+
+.solution-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 56px;
+}
+
+.solution-item {
+  background-color: var(--color-cream);
+  border: 1px solid rgba(185, 138, 74, 0.3);
+  padding: 28px 24px;
+  border-radius: 4px;
+}
+
+.solution-num {
+  color: var(--color-gold);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.solution-item h3 {
+  margin-top: 12px;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.solution-item p {
+  color: var(--color-rock-gray);
+  font-size: 0.9rem;
+}
+
+.solution-flow {
+  margin-top: 56px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: var(--color-charcoal);
+  font-weight: 600;
+}
+
+.flow-arrow {
+  color: var(--color-gold);
+}
+
+/* ============================================
+   CooperationBlock
+   ============================================ */
+.cooperation-block {
+  background-color: var(--color-cream);
+}
+
+.cooperation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 32px;
+  margin-top: 56px;
+}
+
+.cooperation-item {
+  text-align: left;
+}
+
+.coop-num {
+  display: inline-block;
+  color: var(--color-gold);
+  font-size: 1.3rem;
+  font-weight: 700;
+  border-bottom: 2px solid var(--color-gold);
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+.cooperation-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.cooperation-item p {
+  color: var(--color-rock-gray);
+  font-size: 0.9rem;
+}
+
+.cooperation-block .btn {
+  margin-top: 40px;
+}
+
+/* ============================================
+   BeautyLabExampleBlock
+   ============================================ */
+.beauty-lab-block {
+  background-color: #EAE2D3;
+}
+
+.beauty-desc {
+  color: var(--color-rock-gray);
+  margin-top: 20px;
+  max-width: 640px;
+}
+
+.beauty-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 56px;
+  margin-bottom: 48px;
+}
+
+.beauty-item {
+  background-color: var(--color-cream);
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(185, 138, 74, 0.25);
+}
+
+.beauty-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.beauty-item h3 {
+  font-size: 1.05rem;
+  margin: 16px 20px 8px;
+}
+
+.beauty-item p {
+  color: var(--color-rock-gray);
+  font-size: 0.9rem;
+  margin: 0 20px 20px;
+}
+
+/* ============================================
+   FinalCTABlock
+   ============================================ */
+.final-cta-block {
+  background-color: var(--color-charcoal);
+  text-align: center;
+}
+
+.final-cta-block h2 {
+  color: var(--color-cream);
+}
+
+.final-cta-block .section-sub {
+  color: #C9C4BA;
+}
+
+.final-cta-block .btn {
+  margin-top: 32px;
+}
+
+.brand-closing {
+  margin-top: 56px;
+  color: var(--color-gold);
+  font-size: 1.05rem;
+  font-style: italic;
+}
+
+/* ============================================
+   響應式：平板
+   ============================================ */
+@media (max-width: 1024px) {
+  .pain-grid,
+  .solution-grid,
+  .beauty-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ============================================
+   響應式：手機
+   ============================================ */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 64px;
+  }
+
+  .main-nav {
+    position: fixed;
+    top: 64px;
+    right: 0;
+    width: 220px;
+    height: calc(100vh - 64px);
+    background-color: var(--color-cream);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px 24px;
+    gap: 24px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    box-shadow: -4px 0 12px rgba(0,0,0,0.08);
+  }
+
+  .main-nav.open {
+    transform: translateX(0);
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .hero-text h1 {
+    font-size: 1.7rem;
+  }
+
+  .hero-process {
+    flex-direction: column;
+    align-self: flex-start;
+    width: 100%;
+  }
+
+  .process-step {
+    width: 100%;
+  }
+
+  .pain-grid,
+  .solution-grid,
+  .beauty-grid,
+  .cooperation-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-inner {
+    padding: 64px 20px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .solution-flow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .flow-arrow {
+    display: none;
+  }
+}
